@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script type="text/javascript" src="/InterestingStruts2/js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		//页面加载完成后操作	
+		$(function(){
+			$("#a").toggle(function(){
+				
+				//1.向服务器发送请求，获取商品信息
+				//$.post("${ pageContext.request.contextPath }/showProductDay03",function(data){
+				$.post("/InterestingStruts2/showProductChapter03",function(data){
+					//2.将响应回的json数据转换成html代码，在div中展示
+					var html = "<table border='1'><tr><td>编号</td><td>名称</td><td>价格</td></tr>";
+					
+					//[{"id":1,"name":"电视机","price":2000.0},{"id":2,"name":"电冰箱","price":3000.0}
+					var jsonObj = eval(data);
+					for(var i = 0; i < jsonObj.length; i++) {
+						html += "<tr><td>"+jsonObj[i].id+"</td><td>"+jsonObj[i].name+"</td><td>"+jsonObj[i].price+"</td></tr>";
+					}
+					
+					html += "</table>";
+					$("#productMsg").html(html);
+				},"json");
+				
+			}, function(){
+				$("#productMsg").html("");
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<a href="javascript:void(0)" id="a">显示商品信息</a>
+	<div id="productMsg"></div>
+</body>
+</html>

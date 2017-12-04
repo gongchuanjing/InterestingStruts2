@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册页面</title>
+<script type="text/javascript" src="/InterestingStruts2/js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	//校验用户名是否可用
+	function checkUsername() {
+		
+		//1.获取用户名
+		var username = $("#username").val();
+		
+		//2.向服务器发送请求
+		//$.post("${ pageContext.request.contextPath }/checkUsername",{"username":username},function(data){
+		$.post("/InterestingStruts2/checkUsername",{"username":username},function(data){
+			
+			var jsonObj = eval(data);//转换成js对象
+			if(jsonObj.flag) {
+				//可以使用
+				$("#username_msg").html("<font color='green'>"+ jsonObj.message +"</font>");
+			} else {
+				//不可以使用
+				$("#username_msg").html("<font color='red'>"+ jsonObj.message +"</font>");
+			}
+			
+		}, "json");
+	};
+</script>
+</head>
+<body>
+	<input type="text" name="username" id="username" onblur="checkUsername()">
+	<span id="username_msg"></span><br>
+	<input type="password" name="password">
+</body>
+</html>
