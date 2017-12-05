@@ -7,6 +7,7 @@
 ## 开发环境说明
 	eclipse：Luna Service Release 1 (4.4.1) (简称：eclipse luna-SR1_4.4.1)
 	JDK：1.8.0_92
+	tomcat：apache-tomcat-7.0.69
 
 ## 总体大纲（只列出了部分重要的技术点）
 	chapter01
