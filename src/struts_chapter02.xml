@@ -20,7 +20,7 @@
     		</interceptor-stack>
     	</interceptors>
     	
-    	<!-- 第二天 -->
+    	<!-- 第二章 -->
     	<action name="LoginAction3" class="tk.chuanjing.chapter02.action.LoginAction3" method="login" >
     		<result name="success" type="redirect">/jspChapter02/success.jsp</result>
     		<!-- <result name="failer">/jspday01/failer.jsp</result> -->

@@ -19,7 +19,7 @@
    			</interceptor-stack>
    		</interceptors>
    		
-    	<!-- 第三天 -->
+    	<!-- 第三章 -->
     	<action name="up" class="tk.chuanjing.chapter03.action.UploadAction" method="uploadFile" >
     		<result name="input">/jspChapter03/Error.jsp</result>
     		<interceptor-ref name="fileUpload">
