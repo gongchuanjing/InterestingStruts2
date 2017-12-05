@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!--
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/WEB-INF/jsp/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+    </package>
+
+    <include file="example.xml"/>
+    -->
+
+
+
+    <!-- 声明常量 -->
+    <!-- 可以帮助我们解决post请求乱码问题 -->
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    
+    <!-- 指定访问strtsu2框架路径的扩展名 
+    <constant name="struts.action.extension" value="action"></constant>
+    -->
+    
+    <!-- 配置这项后，它会提供更加详细报错信息，以及在struts.xml文件修改后不在需要重启服务器 -->
+    <constant name="struts.devMode" value="true"></constant>
+    
+    <!-- 开启动态方法调用，有漏洞，不要用
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    -->
+    
+    <!-- 文件上传大小限制 -->
+    <constant name="struts.multipart.maxSize" value="20971520"></constant>
+    
+    <!-- 指定注解扫描目录 -->
+    <!-- <constant name="struts.convention.package.locators" value="action,actions,struts,struts2"/> -->
+
+	<!-- <include file="./struts_chapter01.xml"/> -->
+	<!-- <include file="./struts_chapter02.xml"/> -->
+	<include file="./struts_chapter03.xml"/>
+    	
+</struts>

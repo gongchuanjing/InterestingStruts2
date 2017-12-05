@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="chapter01" namespace="/" extends="struts-default">
+    
+    	<!--
+    	关于路径跳转的配置,可以直接在<package>下创建全局的result
+		<global-results>
+    		<result name="" type=""></result>
+    	</global-results>
+		-->
+    	
+    	<action name="Struts2Demo1Action" class="tk.chuanjing.chapter01.action.Struts2Demo1Action" method="show" ></action>
+    	
+    	<!--
+	    	默认值是dispatcher 它代表的是请求转发。针对于jsp页面
+			redirect  它代表的是重定向   针对于jsp页面 
+			chain  它类似于请示转发，只不过它是针对于action跳转.
+			redirectAction 它类似于重定向  针对于action
+		-->
+    	<action name="LoginAction" class="tk.chuanjing.chapter01.action.LoginAction" method="login" >
+    		<result name="success" type="redirect">/jspChapter01/success.jsp</result>
+    		<result name="failer">/jspChapter01/failer.jsp</result>
+    	</action>
+    	
+    	<action name="LoginAction1" class="tk.chuanjing.chapter01.action.LoginAction1" method="login" >
+    		<result name="success" type="redirect">/jspChapter01/success.jsp</result>
+    		<result name="failer">/jspChapter01/failer.jsp</result>
+    	</action>
+    	
+    	<action name="LoginAction2" class="tk.chuanjing.chapter01.action.LoginAction2" method="login" >
+    		<result name="success" type="redirect">/jspChapter01/success.jsp</result>
+    		<result name="failer">/jspChapter01/failer.jsp</result>
+    	</action>
+    	
+    	<!--
+    		它的作用就是当一个请求来时，如果查找不到指定的class及对应的method就会执行
+			ActionSupport类中的execute方法。
+			在这个类的execute方法中默认返回的是”success”
+			也就是说，result的name属性默认值是success,默认的跳转方式是请求转发 dispatcher
+		-->
+    	<action name="test">
+    		<result>/jspChapter01/login.jsp</result>
+    	</action>
+    	
+    	<!-- <action name="bookadd" class="tk.chuanjing.web.action.BookAction" method="addBook"></action> 
+			<action name="bookupdate" class="tk.chuanjing.web.action.BookAction" method="updateBook"></action> 
+			<action name="bookdel" class="tk.chuanjing.web.action.BookAction" method="delBook"></action> 
+			<action name="bookfind" class="tk.chuanjing.web.action.BookAction" method="findBook"></action> -->
+		<!-- 以上操作可以简化，使用*通配置来操作
+    	<action name="*_*" class="tk.chuanjing.chapter01.action.{1}Action" method="{2}"></action>
+    	-->
+    	
+    </package>
+
+</struts>

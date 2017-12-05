@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="chapter02" namespace="/" extends="struts-default">
+    
+    	<!-- 声明 -->
+    	<interceptors>
+    		<interceptor name="MyInterceptor" class="tk.chuanjing.chapter02.MyInterceptor">
+    			<param name="includeMethods">showProduct</param>
+    			<param name="excludeMethods">addProduct</param>
+    		</interceptor>
+    		
+    		<interceptor-stack name="MyStack">
+    			<interceptor-ref name="MyInterceptor"></interceptor-ref>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		</interceptor-stack>
+    	</interceptors>
+    	
+    	<!-- 第二天 -->
+    	<action name="LoginAction3" class="tk.chuanjing.chapter02.action.LoginAction3" method="login" >
+    		<result name="success" type="redirect">/jspChapter02/success.jsp</result>
+    		<!-- <result name="failer">/jspday01/failer.jsp</result> -->
+    		<result name="failer">/jspChapter02/login3.jsp</result>
+    	</action>
+    	
+    	<action name="ValueStackAction" class="tk.chuanjing.chapter02.action.ValueStackAction" method="execute" >
+    		<result name="success">/jspChapter02/OgnlTest2.jsp</result>
+    		
+    		<!-- $它主要是从配置文件中来获取valueStack中数据 -->
+    		<!-- <result name="success" type="redirect">/jspChapter02/OgnlTest2.jsp?username=${model.username}</result> -->
+    	</action>
+    	
+    	<action name="product_*" class="tk.chuanjing.chapter02.action.ProductAction" method="{1}" >
+    		<result name="success">/jspChapter02/Product.jsp</result>
+    		<result name="login">/jspChapter02/login3.jsp</result>
+    		<interceptor-ref name="MyStack"></interceptor-ref>
+    	</action>
+    	
+    </package>
+
+</struts>

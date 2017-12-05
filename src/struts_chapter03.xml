@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!-- <package name="chapter03" namespace="/" extends="struts-default"> -->
+    <package name="chapter03" namespace="/" extends="json-default">
+    
+    	<interceptors>
+   			<interceptor name="LoginInterceptor" class="tk.chuanjing.chapter03.Annotation.utils.LoginInterceptor">
+   				<param name="includeMethods">showProduct</param>
+   			</interceptor>
+   			
+   			<interceptor-stack name="AnnotationMyStack">
+   				<interceptor-ref name="LoginInterceptor"></interceptor-ref>
+   				<interceptor-ref name="defaultStack"></interceptor-ref>
+   			</interceptor-stack>
+   		</interceptors>
+   		
+    	<!-- 第三天 -->
+    	<action name="up" class="tk.chuanjing.chapter03.action.UploadAction" method="uploadFile" >
+    		<result name="input">/jspChapter03/Error.jsp</result>
+    		<interceptor-ref name="fileUpload">
+    			<!-- <param name="maximumSize"></param> --> <!-- 设置每一个action允许的上传文件大小 -->
+				<!-- <param name="allowedTypes"></param> --> <!-- 设置上传允许的文件的mimeType类型，多个使用逗号分开  -->
+				<param name="allowedExtensions">png,txt</param> <!-- 设置上传文件允许的后缀名，多个使用逗号分开 -->
+    		</interceptor-ref>
+    		<interceptor-ref name="defaultStack"></interceptor-ref>
+    	</action>
+    	
+    	<action name="upMany" class="tk.chuanjing.chapter03.action.UploadManyAction" method="uploadFile" >
+    		<result name="input">/jspChapter03/Error.jsp</result>
+    	</action>
+    	
+    	<action name="checkUsername" class="tk.chuanjing.chapter03.action.UserAction" method="checkUsername" >
+    	</action>
+    	
+    	<action name="showProductChapter03" class="tk.chuanjing.chapter03.action.ProductAction" method="showProduct" >
+			<result name="success" type="json" >
+				<param name="root">ps</param>
+				<param name="excludeProperties">\[\d+\]\.releaseDate</param>
+				<!-- <param name="includeProperties">ps\[\d+\]\.id,ps\[\d+\]\.name</param> -->
+			</result>
+    	</action>
+    	
+    </package>
+
+</struts>
