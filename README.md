@@ -32,3 +32,10 @@
 		struts2框架自带json插件的简单使用
 		使用struts2框架完成一个ajax开发的小案例（查询商品信息）
 		struts2框架注解开发
+
+## 友情链接，其他技术的整理：
+JavaSE：[InterestingJavaSE](https://github.com/gongchuanjing/InterestingJavaSE.git)
+
+JavaEE：[InterestingJavaEE](https://github.com/gongchuanjing/InterestingJavaEE.git)
+
+Hibernate：[InterestingStruts2](https://github.com/gongchuanjing/InterestingHibernate.git)
