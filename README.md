@@ -33,11 +33,15 @@
 		使用struts2框架完成一个ajax开发的小案例（查询商品信息）
 		struts2框架注解开发
 
-## 友情链接，其他技术的整理：
+## 打个广告：其他技术的整理
 JavaSE：[InterestingJavaSE](https://github.com/gongchuanjing/InterestingJavaSE.git)
 
 JavaEE：[InterestingJavaEE](https://github.com/gongchuanjing/InterestingJavaEE.git)
 
-Hibernate：[InterestingStruts2](https://github.com/gongchuanjing/InterestingHibernate.git)
+Spring：[InterestingSpring](https://github.com/gongchuanjing/InterestingSpring.git)
 
-Spring：[InterestingStruts2](https://github.com/gongchuanjing/InterestingSpring.git)
+Hibernate：[InterestingHibernate](https://github.com/gongchuanjing/InterestingHibernate.git)
+
+SSH采用XML方式整合：[InterestingSSH_XML](https://github.com/gongchuanjing/InterestingSSH_XML.git)
+
+SSH采用注解方式整合：[InterestingSSH_annotation](https://github.com/gongchuanjing/InterestingSSH_annotation.git)
