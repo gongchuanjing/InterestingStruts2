@@ -25,7 +25,7 @@
     		<interceptor-ref name="fileUpload">
     			<!-- <param name="maximumSize"></param> --> <!-- 设置每一个action允许的上传文件大小 -->
 				<!-- <param name="allowedTypes"></param> --> <!-- 设置上传允许的文件的mimeType类型，多个使用逗号分开  -->
-				<param name="allowedExtensions">png,txt</param> <!-- 设置上传文件允许的后缀名，多个使用逗号分开 -->
+				<!-- <param name="allowedExtensions">png,txt</param> --> <!-- 设置上传文件允许的后缀名，多个使用逗号分开 -->
     		</interceptor-ref>
     		<interceptor-ref name="defaultStack"></interceptor-ref>
     	</action>
